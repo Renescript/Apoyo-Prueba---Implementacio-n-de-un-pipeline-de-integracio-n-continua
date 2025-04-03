@@ -19,7 +19,7 @@ pipeline {
                 script { 
                     try { 
                         echo "⚙️ Instalando dependencias..." 
-                        bat 'npm install' 
+                        sh 'npm install' 
                     } catch (Exception e) { 
                         error("❌ Error en la etapa de dependencias") 
                     } 
@@ -32,7 +32,7 @@ pipeline {
                 script { 
                     try { 
                         echo "🧪 Ejecutando pruebas..." 
-                        bat 'npm test' 
+                        sh 'npm test' 
                     } catch (Exception e) { 
                         error("❌ Error en la etapa de Test") 
                     } 
@@ -44,8 +44,8 @@ pipeline {
             steps {
                 script {
                     //def imagen = 'desafio_jenkins:latest'
-                    bat "docker build -t desafio_jenkins ."
-                    bat "docker run -p 3000:3000 desafio_jenkins"
+                    sh "docker build -t desafio_jenkins ."
+                    sh "docker run -p 3000:3000 desafio_jenkins"
                 }
             }
         } 
