@@ -4,7 +4,7 @@ const app = require('../app');
 
 describe('API Tests', () => {
   it('should return a list of users', async () => {
-    const res = await request(app).get('/users1');
+    const res = await request(app).get('/users');
     expect(res.statusCode).toEqual(200);
     expect(res.body).toHaveLength(2);
   });
