@@ -45,13 +45,13 @@ pipeline {
                 script {
                     //def imagen = 'desafio_jenkins:latest'
                     sh "docker build -t desafio_jenkins ."
-                    sh "docker run -p 3000:3000 desafio_jenkins"
+                    sh "docker run -d -p 3000:3000 desafio_jenkins"
                 }
             }
         } 
     } 
  
-    post { 
+    post {
         success { 
             echo "✅ Pipeline completado con éxito" 
         } 
