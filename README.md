@@ -7,8 +7,8 @@ Este proyecto muestra una API básica de Node.js para gestionar tareas, integrad
 
 ## Capacidades de la API
 
-- Listar todas las tareas
-- Obtener una tarea por ID
+- Listar todos los usuarios: `http://localhost:3000/users`
+- Obtener un usuario por ID `http://localhost:3000/users/:id`
 
 ## Correr de manera local
 
@@ -17,10 +17,10 @@ Este proyecto muestra una API básica de Node.js para gestionar tareas, integrad
 
 ## Correr con Docker
 
-1. Construir la imagen: `docker build -t task-api .`  
-2. Correr el contenedor: `docker run -p 3000:3000 task-api`
+1. Construir la imagen: `docker build -t prueba-jenkins .`  
+2. Correr el contenedor: `docker run -p 3000:3000 prueba-jenkins`
 
-Resultado Test en jenkins:
+Resultado Pipeline en jenkins:
 
 Primero, intencionalmente hicimos fallar los tests para que la pipeline fallara:
 
