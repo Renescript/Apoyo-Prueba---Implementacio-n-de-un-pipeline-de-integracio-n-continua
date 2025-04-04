@@ -43,18 +43,9 @@ pipeline {
         stage('Docker') {
             steps {
                 script {
-                    // Clean up any existing containers
-                    sh 'docker ps -q --filter name=desafio_jenkins | xargs -r docker stop'
-                    sh 'docker ps -aq --filter name=desafio_jenkins | xargs -r docker rm'
                     //def imagen = 'desafio_jenkins:latest'
                     sh "docker build -t desafio_jenkins ."
-                    sh """
-                        docker run -d \
-                        --name desafio_jenkins_instance \
-                        --network jenkins_network \
-                        -p 3000:3000 \
-                        desafio_jenkins
-                    """
+                    sh "docker run -p 3000:3000 desafio_jenkins"
                 }
             }
         } 
