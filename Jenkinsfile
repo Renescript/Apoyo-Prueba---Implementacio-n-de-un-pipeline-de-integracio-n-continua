@@ -52,10 +52,6 @@ pipeline {
     } 
  
     post {
-        always {
-            sh 'docker stop desafio_jenkins_container || true'
-            sh 'docker rm desafio_jenkins_container || true'
-        }
         success { 
             echo "✅ Pipeline completado con éxito" 
         } 
